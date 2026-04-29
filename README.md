@@ -1,22 +1,21 @@
-# GitHub Pages 公開メモ
+# TRY/JPY 換算
 
-このフォルダは `index.html` をそのまま GitHub Pages で公開できます。
+トルコリラを日本円に換算するシンプルな GitHub Pages 用ページです。
 
-## 手順
+## 公開手順
 
-1. GitHub で新しいリポジトリを作成
-2. このフォルダをそのリポジトリに push
-3. GitHub の `Settings` → `Pages` を開く
-4. `Build and deployment` の `Source` を `Deploy from a branch` にする
-5. `Branch` を `main`、フォルダを `/ (root)` にして保存
-6. 数分待つと公開URLが発行される
+1. GitHub のリポジトリにこのフォルダを push します。
+2. GitHub の `Settings` → `Pages` を開きます。
+3. `Build and deployment` の `Source` を `Deploy from a branch` にします。
+4. `Branch` を `main`、フォルダを `/ (root)` にして保存します。
+5. 数分待つと公開 URL が発行されます。
 
-公開URLの例:
+公開 URL の例:
 
 `https://<ユーザー名>.github.io/<リポジトリ名>/`
 
-## 補足
+## メモ
 
-- 公開対象は `index.html` です
-- `換算.html` は作業用として残しています
-- レート取得APIにアクセスできればスマホからもそのまま使えます
+- 公開対象は `index.html` です。
+- `換算.html` は `index.html` に自動転送します。
+- 為替レートを取得できない場合は初期値の `4.3` 円で計算します。

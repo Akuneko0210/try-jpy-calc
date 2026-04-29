@@ -24,7 +24,7 @@
         body {
             margin: 0;
             padding: 20px;
-            font-family: sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             background-color: var(--bg);
             display: flex;
             flex-direction: column;
@@ -118,7 +118,7 @@
     </div>
 
     <div class="card">
-        <div class="header blue">日本円の 8.8% 引き</div>
+        <div class="header blue">日本円から 8.8% 引き</div>
         <div class="content">
             <label for="numIn">金額を入力</label>
             <input type="number" id="numIn" inputmode="decimal" min="0" step="any">
@@ -151,12 +151,12 @@
 
         function updateExchange() {
             const amount = parseInputValue(tryInput.value);
-            jpyOutput.innerText = formatYen(amount * currentRate);
+            jpyOutput.textContent = formatYen(amount * currentRate);
         }
 
         function updateDiscount() {
             const amount = parseInputValue(numberInput.value);
-            discountOutput.innerText = formatYen(amount * DISCOUNT_RATE);
+            discountOutput.textContent = formatYen(amount * DISCOUNT_RATE);
         }
 
         async function getRate() {
@@ -174,9 +174,9 @@
                 }
 
                 currentRate = fetchedRate;
-                rateOutput.innerText = currentRate.toFixed(2);
+                rateOutput.textContent = currentRate.toFixed(2);
             } catch (error) {
-                rateOutput.innerText = currentRate.toFixed(2) + " (初期値)";
+                rateOutput.textContent = `${currentRate.toFixed(2)} (初期値)`;
             }
 
             updateExchange();
