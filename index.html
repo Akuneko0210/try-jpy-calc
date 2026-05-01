@@ -109,7 +109,7 @@
         <div class="header">トルコリラ → 日本円</div>
         <div class="content">
             <label for="tryIn">トルコリラ額 (TRY)</label>
-            <input type="number" id="tryIn" inputmode="decimal" min="0" step="any">
+            <input type="text" id="tryIn" inputmode="decimal">
             <div class="result">
                 <span class="val" id="jpyOut">0</span><span class="unit">円</span>
             </div>
@@ -121,7 +121,7 @@
         <div class="header blue">日本円から 8.8% 引き</div>
         <div class="content">
             <label for="numIn">金額を入力</label>
-            <input type="number" id="numIn" inputmode="decimal" min="0" step="any">
+            <input type="text" id="numIn" inputmode="decimal">
             <div class="result">
                 <span class="val danger" id="numOut">0</span><span class="unit">円</span>
             </div>
@@ -141,7 +141,8 @@
         let currentRate = DEFAULT_RATE;
 
         function parseInputValue(value) {
-            const parsed = Number(value);
+            const normalizedValue = value.trim().replace(",", ".");
+            const parsed = Number(normalizedValue);
             return Number.isFinite(parsed) ? parsed : 0;
         }
 
